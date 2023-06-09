@@ -1,7 +1,7 @@
 # B Cell Network Generation
 
 This repository describes the process by which B cell network plots were generated in the following publication:
-- INPUT PUBLICATION DETAILS
+- input publication details when possible
 - Contact peter.thomas.19@ucl.ac.uk with any queries
 
 Required packages:
