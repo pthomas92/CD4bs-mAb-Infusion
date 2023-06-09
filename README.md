@@ -21,5 +21,8 @@ The purpose of this script is to allow network visualisation of BCR sequences, u
 5. Metadata is added to allow colouring of nodes by a categorical variable.
 6. Networks is plotted
 
+## Script Requirements
+- Must have at least 3 unique sequences within the cluster for creation of the nj tree. If this is not the case, it's recommended to deduplicate sequences and change the size of the duplicated nodes to reflect number of duplicates.
+
 ## Customising Colour
 Script is set up to colour by IGHV gene family, however no variables are hard-coded. These variables can therefore be customised to easily create new colouring sets.
