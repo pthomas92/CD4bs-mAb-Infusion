@@ -19,7 +19,7 @@ The purpose of this script is to allow network visualisation of BCR sequences, u
 3. Neighbour joining trees are created per lineage, which defines the edges for each node.
 4. Edgelists are generated for each trees, and concatenated to create a single edgelist for the starting data.
 5. Metadata is added to allow colouring of nodes by a categorical variable.
-6. Networks is plotted
+6. Network is plotted
 
 ## Script Requirements
 - Must have at least 3 unique sequences within the cluster for creation of the nj tree. If this is not the case, it's recommended to deduplicate sequences and change the size of the duplicated nodes to reflect number of duplicates.
