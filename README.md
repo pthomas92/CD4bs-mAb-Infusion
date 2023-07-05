@@ -1,4 +1,4 @@
-# Data and Code availability for publication of Thomas *et al.,* 2023
+# Data and code availability for publication of Thomas *et al.,* 2023
 
 ## Data
 
@@ -7,7 +7,9 @@ Data provided in the data/ directory:
 - Unpaired bulk VH sequencing data from IgG enriched plasma cells
 - Experimental affinity calculated per well
 
-CLONE column contains lineage definition and is consistent between antigen specific VH and bulk VH sequences:
+Sequence data is provided in Changeo format<sup>1</sup> `CLONE` column contains lineage definition and is consistent between antigen specific VH and bulk VH sequences:
+
+<sup>1</sup>: Gupta NT, Vander Heiden JA, Uduman M, Gadala-Maria D, Yaari G, Kleinstein SH. Change-O: a toolkit for analyzing large-scale B cell immunoglobulin repertoire sequencing data. Bioinformatics 2015; doi: 10.1093/bioinformatics/btv359
 
 ## B cell network generation
 
