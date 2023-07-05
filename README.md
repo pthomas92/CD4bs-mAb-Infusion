@@ -5,7 +5,7 @@
 Data provided in the data/ directory:
 - Paired VH and VK sequencing data from antigen specific B cells
 - Unpaired bulk VH sequencing data from IgG enriched plasma cells
-- Affinity obtained per well
+- Experimental affinity calculated per well
 
 ## B cell network generation
 
