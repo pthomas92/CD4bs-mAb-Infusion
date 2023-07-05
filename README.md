@@ -7,6 +7,8 @@ Data provided in the data/ directory:
 - Unpaired bulk VH sequencing data from IgG enriched plasma cells
 - Experimental affinity calculated per well
 
+CLONE column contains lineage definition and is consistent between antigen specific VH and bulk VH sequences:
+
 ## B cell network generation
 
 R code in the scripts/ directory describes the process by which B cell network plots were generated in the following publication:
