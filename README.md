@@ -1,11 +1,8 @@
-# Data and code availability for publication of Thomas *et al.,* 2023
+# Code availability for publication of Thomas *et al.,* 2023
 
 ## Data
 
-Data provided in the data/ directory:
-- Paired VH and VK sequencing data from antigen specific B cells
-- Unpaired bulk VH sequencing data from IgG enriched plasma cells
-- Experimental affinity calculated per well
+Data provided in the following data dryad link: 
 
 Sequence data is provided in Changeo format<sup>1</sup> `CLONE` column contains lineage definition and is consistent between antigen specific VH and bulk VH sequences:
 
