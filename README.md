@@ -2,7 +2,7 @@
 
 ## Data
 
-Data provided in the data/ directory:
+Data provided in the {input path to data after deposition}:
 - Paired VH and VK sequencing data from antigen specific B cells
 - Unpaired bulk VH sequencing data from IgG enriched plasma cells
 - Affinity obtained per well
