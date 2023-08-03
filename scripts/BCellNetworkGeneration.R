@@ -99,8 +99,8 @@ makeNetworks <- function(clone_list = data,
                                 el$source, sep = '_'), el$source)
       
       el$dest <- ifelse(grepl('Node', el$dest),
-                          paste(unique(clone_list[[clone]]$CLONE),
-                                el$dest, sep = '_'), el$dest)
+                        paste(unique(clone_list[[clone]]$CLONE),
+                              el$dest, sep = '_'), el$dest)
       
     } else if(nrow(clone_list[[clone]]) == 2) {
       
@@ -137,17 +137,17 @@ makeNetworks <- function(clone_list = data,
   
   ### create a new vertex attribute for the v identity of each vertex
   for(i in 1:length(V(g))){
+    
+    if(grepl('Node', V(g)$name[i]) == F){
       
-      if(grepl('Node', V(g)$name[i]) == F){
-        
-        V(g)$germ_dist[i] <- data[grep(paste(V(g)$name[i], '$', sep = ''), data[, id_col]), germ_distance]
-        V(g)$size[i] <- 6
-        
-      } else {
-        
-        V(g)$size[i] <- 0.001
-        
-      }
+      V(g)$germ_dist[i] <- data[grep(paste(V(g)$name[i], '$', sep = ''), data[, id_col]), germ_distance]
+      V(g)$size[i] <- 6
+      
+    } else {
+      
+      V(g)$size[i] <- 0.001
+      
+    }
     
   }
   
@@ -155,29 +155,19 @@ makeNetworks <- function(clone_list = data,
   
 }
 
-addMetaData <- function(network_graph,
-                        metadata,
+addMetaData <- function(network_graph = g,
+                        metadata = sequence_data,
                         column_add,
                         name_add,
-                        seq_id = seq_id){
+                        seq_id){
   
-  naming_vector = rep(NA, length(V(network_graph)$name))
+  add_values = sapply(V(network_graph)$name,
+                      function(x, m = metadata, s = seq_id, c = column_add){
+                        row_indexes = match(x, m[,s])
+                        return(m[row_indexes, c])
+                      })
   
-  for(i in 1:length(naming_vector)){
-    
-    if(grepl('Node', V(network_graph)$name[i])){
-      
-      next
-      
-    } else {
-      
-      naming_vector[i] <- metadata[V(network_graph)$name[i] == metadata[,seq_id], column_add]
-      
-    }
-    
-  }
-  
-  network_graph <- set.vertex.attribute(network_graph, name = name_add, value = naming_vector)
+  network_graph = set.vertex.attribute(g, name = name_add, value = add_values)
   
   return(network_graph)
   
@@ -191,7 +181,7 @@ setColours <- function(vertex_characteristic,
   names(palette_) <- 
     sort(unique(
       get.vertex.attribute(g, vertex_characteristic)[!is.na(get.vertex.attribute(g,vertex_characteristic))]
-      ))
+    ))
   
   ### if vertex attribute is not NA (i.e., it's not an intermediate node in the nj tree), assign the colour named above
   colours_ = sapply(get.vertex.attribute(g, vertex_characteristic), function(x, cp = palette_){
@@ -221,7 +211,7 @@ load_installPackages()
 cbbPalette <- c("#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7", "#999999")
 
 ##### Variables used within the paper #####
-path_to_file = '/path/to/file.csv'
+path_to_file = '~/OneDrive - University College London/Papers/mAb feedback/scripts/Scripts For Submission/data/VH-sequences_Sanger.csv'
 file_sep = ','
 seq_id = 'SEQUENCE_ID'
 sequence_ = 'SEQUENCE_VDJ'
@@ -245,21 +235,25 @@ g <- makeNetworks(split(sequence_data, sequence_data[,clone_]),
 
 ##### generate graph layouts with graph optimisation (adds time, but improves visualisation) #####
 set.seed(1234)
-layout_ = layout_with_graphopt(graph = g, niter = 50000) # should be set to ≥ 20000 to resolve lineages properly
+layout_ = layout_with_graphopt(graph = g, niter = 20000) # should be set to ≥ 20000 to resolve lineages properly
 
 #####
 
 ##### add metadata to network #####
 
-### metadata addition is currently through a loop (so a bit slow)
-### but code was failing to save output correctly in the function when using 'set.vertex.attribute'
-### will change later
-
 ### default colouring requires v family to be added
-g = addMetaData(network_graph = g, metadata = sequence_data, column_add = 'V_FAM', name_add = 'v_fam')
+g = addMetaData(network_graph = g,
+                metadata = sequence_data,
+                column_add = 'V_FAM',
+                name_add = 'v_fam',
+                seq_id = seq_id)
 
 ### example of adding additional data
-g = addMetaData(network_graph = g, metadata = sequence_data, column_add = 'SAMPLE_ID', name_add = 'immunisation')
+g = addMetaData(network_graph = g,
+                metadata = sequence_data,
+                column_add = 'SAMPLE_ID',
+                name_add = 'immunisation',
+                seq_id = seq_id)
 
 #####
 
