@@ -2,7 +2,12 @@
 
 ## Data
 
-Data provided in the following data dryad link: 
+Data provided in the {input path to data after deposition}:
+- Paired VH and VK sequencing data from antigen specific B cells
+- Unpaired bulk VH sequencing data from IgG enriched plasma cells
+- Affinity obtained per well
+
+Data provided in the following Mendeley data link: 
 
 Sequence data is provided in Changeo format<sup>1</sup> `CLONE` column contains lineage definition and is consistent between antigen specific VH and bulk VH sequences:
 
