@@ -17,7 +17,7 @@ Sequence data is provided in Changeo format<sup>1</sup> `CLONE` column contains 
 
 R code in the scripts/ directory describes the process by which B cell network plots were generated in the following publication:
 - **input publication details when possible**
-- Contact peter.thomas.19@ucl.ac.uk (author) or l.mccoy@ucl.ac.uk (supervisor) with any queries
+- Contact peter.thomas.19@ucl.ac.uk (author) with any queries
 
 Required packages:
 - `tidyverse` (script uses v1.3.2)
