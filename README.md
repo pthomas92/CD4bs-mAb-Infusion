@@ -1,4 +1,4 @@
-# Code availability for publication of Thomas *et al.,* 2023
+# Code availability for publication of Thomas *et al.,* 2024
 
 ## Data
 
@@ -7,7 +7,8 @@ Data provided in the {input path to data after deposition}:
 - Unpaired bulk VH sequencing data from IgG enriched plasma cells
 - Affinity obtained per well
 
-Data provided in the following Mendeley data link: 
+### Data provided in the following Mendeley data link:
+- Thomas, Peter (2024), “2024-Bulk_SC BCR Sequencing Data”, Mendeley Data, V1, doi: 10.17632/5k5thsgxw7.1
 
 Sequence data is provided in Changeo format<sup>1</sup> `CLONE` column contains lineage definition and is consistent between antigen specific VH and bulk VH sequences:
 
@@ -16,7 +17,7 @@ Sequence data is provided in Changeo format<sup>1</sup> `CLONE` column contains 
 ## B cell network generation
 
 R code in the scripts/ directory describes the process by which B cell network plots were generated in the following publication:
-- **input publication details when possible**
+- High affinity mAb infusion can enhance maximum affinity maturation during HIV Env immunization; doi: 10.1016/j.isci.2024.109495
 - Contact peter.thomas.19@ucl.ac.uk (author) with any queries
 
 Required packages:
