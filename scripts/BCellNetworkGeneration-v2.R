@@ -2,7 +2,12 @@
 #                                                                                                                  #
 # Script written by Peter Thomas, Laura McCoy's Lab, UCL IIT, 2023                                                 #
 #                                                                                                                  #
-# Manuscript currently under review                                                                                #
+# To cite this work in publications, please use:                                                                   #
+#    Peter Thomas, Chloe Rees-Spear, Sarah Griffith, Luke Muir, Emma Touizer, Raiees Andrabi,                      #
+#    Richard Priest, Jennifer Percival-Alwyn, Darryl Hayward, Amanda Buxton, William Traylen,                      #
+#    Benny Chain, Trevor Wattam, Irene Sanjuan Nandin, Laura E. McCoy (2024) High affinity mAb infusion can        #
+#    enhance maximum affinity maturation during HIV Env immunization 19; 27(4): 109495                             #
+#    doi: 10.1016/j.isci.2024.109495                                                                               #
 #                                                                                                                  #
 # Outline:                                                                                                         #
 #   For each defined group (i.e., immunisation group/epitope specificity), it partitions sequences into            #
